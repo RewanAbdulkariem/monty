@@ -24,10 +24,11 @@ void execute_instruction(stack_t **stack,
 		{"mod", _mod},
 		{"pchar", _pchar},
 		{"pstr", _pstr},
+		{"rotl",_rotl},
 		{"null", NULL}
 	};
 
-	for (i = 0; i < 13; i++)
+	for (i = 0; i < 14; i++)
 	{
 		if (strcmp("push", opcode) == 0)
 		{
