@@ -41,6 +41,7 @@ int main(int argc, char **argv)
 	while (stack != NULL)
 	{
 		stack_t *temp = stack;
+
 		stack = stack->prev;
 		free(temp);
 	}
