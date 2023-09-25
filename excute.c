@@ -13,6 +13,7 @@ void execute_instruction(stack_t **stack,
 
 	instruction_t instructions[] = {
 		{"pall", _pall},
+		{"pint", _pint},
 		{"null", NULL}
 	};
 
