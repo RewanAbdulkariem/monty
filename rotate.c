@@ -11,7 +11,7 @@ void _rotl(stack_t **stack, unsigned int line_number)
 	stack_t *new;
 	int tmp;
 
-	if (*stack != NULL)
+	if (*stack != NULL && (*stack)->prev != NULL)
 	{
 		tmp = (*stack)->n;
 		last = *stack;
@@ -22,6 +22,6 @@ void _rotl(stack_t **stack, unsigned int line_number)
 		new = malloc(sizeof(stack_t));
 		new->n = tmp;
 		new->next = last;
-		last->prev = new; 
+		last->prev = new;
 	}
 }

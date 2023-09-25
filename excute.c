@@ -24,7 +24,7 @@ void execute_instruction(stack_t **stack,
 		{"mod", _mod},
 		{"pchar", _pchar},
 		{"pstr", _pstr},
-		{"rotl",_rotl},
+		{"rotl", _rotl},
 		{"null", NULL}
 	};
 
