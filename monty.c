@@ -32,7 +32,6 @@ int main(int argc, char **argv)
 	{
 		char *opcode, *value;
 
-
 		opcode = strtok(line, " \t\n");
 		value = strtok(NULL, " \t\n");
 		if (opcode[0] == '#')

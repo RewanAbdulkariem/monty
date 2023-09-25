@@ -22,10 +22,11 @@ void execute_instruction(stack_t **stack,
 		{"div", _div},
 		{"mul", _mul},
 		{"mod",_mod},
+		{"pchar", _pchar},
 		{"null", NULL}
 	};
 
-	for (i = 0; i < 11; i++)
+	for (i = 0; i < 12; i++)
 	{
 		if (strcmp("push", opcode) == 0)
 		{
