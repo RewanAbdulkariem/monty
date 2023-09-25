@@ -48,7 +48,7 @@ void _pstr(stack_t **stack, unsigned int line_number)
 	temp = *stack;
 	while (temp != NULL)
 	{
-		asciiCode = (*stack)->n;
+		asciiCode = temp->n;
 		if (asciiCode <= 0 || asciiCode > 127)
 			break;
 
