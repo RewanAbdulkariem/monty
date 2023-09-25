@@ -40,4 +40,5 @@ void _push(stack_t **stack, unsigned int line_number, char *value);
 void _pall(stack_t **stack, unsigned int line_number);
 int is_integer(char *str);
 void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
 #endif
