@@ -5,7 +5,6 @@
 #include <string.h>
 #include <sys/types.h>
 #include <unistd.h>
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer

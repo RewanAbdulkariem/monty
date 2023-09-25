@@ -1,4 +1,5 @@
 #include "monty.h"
+extern char *value;
 /**
  * _push - Pushes an element onto the stack.
  *
@@ -8,10 +9,8 @@
 void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
-	char *value;
-	int num;
+	int num = 0;
 
-	value = strtok(NULL, " \t\n");
 	if (value == NULL || !is_integer(value))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
@@ -27,19 +26,17 @@ void _push(stack_t **stack, unsigned int line_number)
 	}
 
 	new_node->n = num;
-	if (*stack == NULL)
-	{
-		new_node->next = NULL;
-		new_node->prev = NULL;
-		*stack = new_node;
-	}
-	else
+	new_node->next = NULL;
+	new_node->prev = NULL;
+
+	if (*stack != NULL)
 	{
 		(*stack)->next = new_node;
-		new_node->next = NULL;
 		new_node->prev = *stack;
 		*stack = new_node;
 	}
+	else
+		*stack = new_node;
 }
 /**
  * is_integer - Checks if a string represents a valid integer.

@@ -1,4 +1,5 @@
 #include "monty.h"
+char *value = NULL;
 /**
  * main - Entry point for the Monty bytecode interpreter.
  *
@@ -10,7 +11,7 @@
  */
 int main(int argc, char **argv)
 {
-	stack_t **stack = NULL;
+	stack_t *stack = NULL;
 	FILE *mfile = NULL;
 	char line[1024];
 	unsigned int line_number = 0;
@@ -33,9 +34,9 @@ int main(int argc, char **argv)
 		char *opcode;
 
 		opcode = strtok(line, " \t\n");
-
+		value = strtok(NULL, " \t\n");
 		if (opcode != NULL)
-			execute_instruction(stack, opcode, line_number);
+			execute_instruction(&stack, opcode, line_number);
 		line_number++;
 	}
 	fclose(mfile);

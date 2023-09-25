@@ -16,7 +16,7 @@ void execute_instruction(stack_t **stack,
 		{"null", NULL}
 	};
 
-	for (i = 0; instructions[i].opcode != NULL; i++)
+	for (i = 0; i < 3; i++)
 	{
 		if (strcmp(instructions[i].opcode, opcode) == 0)
 		{
