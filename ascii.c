@@ -37,6 +37,7 @@ void _pchar(stack_t **stack, unsigned int line_number)
 void _pstr(stack_t **stack, unsigned int line_number)
 {
 	int asciiCode;
+	stack_t *temp;
 	(void)line_number;
 
 	if (*stack == NULL)
@@ -44,14 +45,15 @@ void _pstr(stack_t **stack, unsigned int line_number)
 		printf("\n");
 		return;
 	}
-	while (*stack != NULL)
+	temp = *stack;
+	while (temp != NULL)
 	{
 		asciiCode = (*stack)->n;
 		if (asciiCode <= 0 || asciiCode > 127)
 			break;
 
 		putchar((char)asciiCode);
-		*stack = (*stack)->prev;
+		temp = temp->prev;
 	}
 	putchar('\n');
 }
