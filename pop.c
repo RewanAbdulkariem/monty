@@ -18,12 +18,11 @@ void _pop(stack_t **stack, unsigned int line_number)
 	if (tmp->prev == NULL)
 	{
 		*stack = NULL;
-		free(tmp);
 	}
 	else
 	{
 		(*stack)->prev->next = NULL;
 		*stack = (*stack)->prev;
-		free(tmp);
 	}
+	free(tmp);
 }
