@@ -15,10 +15,11 @@ void execute_instruction(stack_t **stack,
 		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
+		{"swap", _swap},
 		{"null", NULL}
 	};
 
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < 5; i++)
 	{
 		if (strcmp("push", opcode) == 0)
 		{
