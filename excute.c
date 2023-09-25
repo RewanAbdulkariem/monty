@@ -2,15 +2,15 @@
 /**
  * execute_instruction - Execute Monty ByteCode instructions
  * @stack: Pointer to the stack data structure
- * @instruction: The opcode to execute
- * @value: The argument associated with the opcode
+ * @opcode: The opcode to execute
+ * @line_number: line number of opcode
  */
-void execute_instruction(stack_t **stack, char *opcode, unsigned int line_number)
+void execute_instruction(stack_t **stack,
+		char *opcode, unsigned int line_number)
 {
 	int i;
 
-	instruction_t instructions[] =
-	{
+	instruction_t instructions[] = {
 		{"push", _push},
 		{"pall", _pall},
 		{"null", NULL}

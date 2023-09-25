@@ -5,7 +5,8 @@
  * @argc: Number of command-line arguments.
  * @argv: Array of command-line argument strings.
  *
- * Return: EXIT_SUCCESS if the program executes successfully, otherwise EXIT_FAILURE.
+ * Return: EXIT_SUCCESS if the program
+ * executes successfully, otherwise EXIT_FAILURE.
  */
 int main(int argc, char **argv)
 {
@@ -20,7 +21,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
-	mfile = fopen(argv[1],"r");
+	mfile = fopen(argv[1], "r");
 	if (mfile == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
