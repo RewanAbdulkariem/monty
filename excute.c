@@ -16,6 +16,7 @@ void execute_instruction(stack_t **stack,
 		{"pint", _pint},
 		{"pop", _pop},
 		{"swap", _swap},
+		{"add", _add},
 		{"null", NULL}
 	};
 
