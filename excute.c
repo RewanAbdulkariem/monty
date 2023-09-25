@@ -4,6 +4,7 @@
  * @stack: Pointer to the stack data structure
  * @opcode: The opcode to execute
  * @line_number: line number of opcode
+ * @value: to pass to push
  */
 void execute_instruction(stack_t **stack,
 		char *opcode, unsigned int line_number, char *value)

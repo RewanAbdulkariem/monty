@@ -4,6 +4,7 @@
  *
  * @stack: Pointer to the top of the stack.
  * @line_number: Current line number in the Monty bytecode file.
+ * @value: to be pushed
  */
 void _push(stack_t **stack, unsigned int line_number, char *value)
 {
