@@ -33,9 +33,7 @@ void _rotl(stack_t **stack, unsigned int line_number)
  */
 void _rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *last;
-	stack_t *new;
-	int tmp;
+	stack_t *last, *tmp;
 	(void)line_number;
 
 	if (*stack != NULL && (*stack)->prev != NULL)
@@ -43,14 +41,15 @@ void _rotr(stack_t **stack, unsigned int line_number)
 		last = *stack;
 		while (last->prev != NULL)
 			last = last->prev;
-		tmp = last->n;
+		
+		tmp = last;
 		last = last->next;
 		last->prev = NULL;
-		new = malloc(sizeof(stack_t));
-		new->n = tmp;
-		new->next = NULL;
-		new->prev = *stack;
-		(*stack)->next = new;
-		*stack = new;
+
+		tmp->next = NULL;
+		tmp->prev = *stack;
+		
+		(*stack)->next = tmp;
+		*stack = tmp;
 	}
 }
