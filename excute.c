@@ -21,7 +21,7 @@ void execute_instruction(stack_t **stack,
 		{"null", NULL}
 	};
 
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < 7; i++)
 	{
 		if (strcmp("push", opcode) == 0)
 		{
