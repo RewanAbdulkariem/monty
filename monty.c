@@ -14,7 +14,6 @@ int main(int argc, char **argv)
 	FILE *mfile = NULL;
 	char line[1024];
 	unsigned int line_number = 0;
-	char *value = NULL;
 
 	if (argc != 2)
 	{
@@ -31,13 +30,19 @@ int main(int argc, char **argv)
 
 	while (fgets(line, sizeof(line), mfile) != NULL)
 	{
-		char *opcode;
+		char *opcode, *value;
 
+		line_number++;
 		opcode = strtok(line, " \t\n");
 		value = strtok(NULL, " \t\n");
 		if (opcode != NULL)
 			execute_instruction(&stack, opcode, line_number, value);
-		line_number++;
+	}
+	while (stack != NULL)
+	{
+		stack_t *temp = stack;
+		stack = stack->prev;
+		free(temp);
 	}
 	fclose(mfile);
 	return (0);
