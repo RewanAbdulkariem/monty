@@ -7,8 +7,9 @@
  */
 void _rotl(stack_t **stack, unsigned int line_number)
 {
-	stack_t *first, *second, *last
+	stack_t *first, *second, *last;
 	(void)line_number;
+
 	if (*stack != NULL && (*stack)->next != NULL)
 	{
 		first = *stack;
