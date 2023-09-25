@@ -19,10 +19,11 @@ void execute_instruction(stack_t **stack,
 		{"add", _add},
 		{"nop", _nop},
 		{"sub", _sub},
+		{"div", _div},
 		{"null", NULL}
 	};
 
-	for (i = 0; i < 8; i++)
+	for (i = 0; i < 9; i++)
 	{
 		if (strcmp("push", opcode) == 0)
 		{
