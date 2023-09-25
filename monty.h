@@ -34,8 +34,8 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-void execute_instruction(stack_t **stack, char *opcode, unsigned int line_number);
-void _push(stack_t **stack, unsigned int line_number);
+void execute_instruction(stack_t **stack, char *opcode, unsigned int line_number, char *value);
+void _push(stack_t **stack, unsigned int line_number, char *value);
 void _pall(stack_t **stack, unsigned int line_number);
 int is_integer(char *str);
 

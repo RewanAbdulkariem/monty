@@ -6,19 +6,23 @@
  * @line_number: line number of opcode
  */
 void execute_instruction(stack_t **stack,
-		char *opcode, unsigned int line_number)
+		char *opcode, unsigned int line_number, char *value)
 {
 	int i;
 
 	instruction_t instructions[] = {
-		{"push", _push},
 		{"pall", _pall},
 		{"null", NULL}
 	};
 
 	for (i = 0; i < 3; i++)
 	{
-		if (strcmp(instructions[i].opcode, opcode) == 0)
+		if (strcmp("push", opcode) == 0)
+		{
+			_push(stack, line_number, value);
+			return;
+		}
+		else if (strcmp(instructions[i].opcode, opcode) == 0)
 		{
 			instructions[i].f(stack, line_number);
 			return;

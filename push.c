@@ -1,12 +1,11 @@
 #include "monty.h"
-extern char *value;
 /**
  * _push - Pushes an element onto the stack.
  *
  * @stack: Pointer to the top of the stack.
  * @line_number: Current line number in the Monty bytecode file.
  */
-void _push(stack_t **stack, unsigned int line_number)
+void _push(stack_t **stack, unsigned int line_number, char *value)
 {
 	stack_t *new_node;
 	int num = 0;
